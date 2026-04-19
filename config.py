@@ -11,3 +11,4 @@ class Config:
 
     # Stop Flask-SQLAlchemy from tracking every modification (saves memory)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    WTF_CSRF_ENABLED = True
