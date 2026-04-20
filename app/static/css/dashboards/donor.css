@@ -1,0 +1,120 @@
+:root {
+  --primary: #4f8cff;
+}
+
+body {
+  background: linear-gradient(180deg, #f7faff, #eef3ff);
+}
+
+.subtext {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e8f0ff, #dbeafe);
+  overflow: hidden;
+  transition: 0.8s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: 1s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  top: -40px;
+  right: -40px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  bottom: -30px;
+  left: -30px;
+}
+
+.avatars {
+  display: flex;
+  margin-top: 10px;
+}
+
+.avatars img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -10px;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.progress-row {
+  margin-bottom: 1rem;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+progress {
+  height: 6px;
+  border-radius: 10px;
+}
+
+aside article {
+  background: linear-gradient(135deg, #f0f5ff, #dbeafe);
+  padding: 1.2rem;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+aside article::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  bottom: -40px;
+  right: -40px;
+}
+
+aside img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+small {
+  color: #6b7280;
+}

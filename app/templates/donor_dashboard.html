@@ -1,260 +1,130 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donor Dashboard</title>  
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    />
-    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+{% extends 'base.html' %}
 
-    <style>
-      :root {
-        --primary: #4f8cff;
-      }
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboards/donor.css') }}">
+{% endblock %}
 
-      body {
-        background: linear-gradient(180deg, #f7faff, #eef3ff);
-      }
+{% block content %}
+<section class="container">
+  <h2>Recent Donations</h2>
+  <p class="subtext">Overview of donations and campaigns</p>
 
-     .subtext {
-        color: #6b7280;
-        margin-bottom: 1.5rem;
-      }
+  <div class="grid-3">
+    <div class="card">
+      <small>Total Donated</small>
+      <h3>Rs. 10,500</h3>
+      <span>This month</span>
 
-      .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.2rem;
-      }
+      <div class="avatars">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" />
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" />
+      </div>
+    </div>
 
-      .card {
-        position: relative;
-        padding: 1.5rem;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #e8f0ff, #dbeafe);
-        overflow: hidden;
-        transition: 0.8s;
-      }
+    <div class="card">
+      <small>People Helped</small>
+      <h3>Rs. 34,000</h3>
+      <span>Recent donations</span>
 
-      .card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        transition: 1s;
-      }
+      <div class="avatars">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" />
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" />
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" />
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" />
+      </div>
+    </div>
 
-      .card::before {
-        content: "";
-        position: absolute;
-        width: 140px;
-        height: 140px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-        top: -40px;
-        right: -40px;
-      }
+    <div class="card">
+      <small>Trips Helped</small>
+      <h3>Rs. 5,000</h3>
+      <span>Recent donations</span>
 
-      .card::after {
-        content: "";
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        bottom: -30px;
-        left: -30px;
-      }
+      <div class="avatars">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" />
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" />
+      </div>
+    </div>
+  </div>
 
-      .avatars {
-        display: flex;
-        margin-top: 10px;
-      }
+  <div class="main-grid">
+    <section>
+      <h5>This Month</h5>
 
-      .avatars img {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        border: 2px solid white;
-        margin-left: -10px;
-      }
-
-      .main-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .progress-row {
-        margin-bottom: 1rem;
-      }
-
-      .flex-between {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9rem;
-      }
-
-      progress {
-        height: 6px;
-        border-radius: 10px;
-      }
-
-      aside article {
-        background: linear-gradient(135deg, #f0f5ff, #dbeafe);
-        padding: 1.2rem;
-        border-radius: 14px;
-        margin-bottom: 1rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      aside article::before {
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        background: rgba(255, 255, 255, 0.4);
-        border-radius: 50%;
-        bottom: -40px;
-        right: -40px;
-      }
-
-      aside img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-      }
-
-      small {
-        color: #6b7280;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="container">
-      <h2>Recent Donations</h2>
-      <p class="subtext">Overview of donations and campaigns</p>
-
-      <div class="grid-3">
-        <div class="card">
-          <small>Total Donated</small>
-          <h3>Rs. 10,500</h3>
-          <span>This month</span>
-
-          <div class="avatars">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" />
-            <img src="https://randomuser.me/api/portraits/men/45.jpg" />
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" />
-          </div>
+      <div class="progress-row">
+        <div class="flex-between">
+          <strong>Food Build Schools</strong>
+          <span>$400 / $800</span>
         </div>
-
-        <div class="card">
-          <small>People Helped</small>
-          <h3>Rs. 34,000</h3>
-          <span>Recent donations</span>
-
-          <div class="avatars">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" />
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" />
-            <img src="https://randomuser.me/api/portraits/men/45.jpg" />
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" />
-          </div>
-        </div>
-
-        <div class="card">
-          <small>Trips Helped</small>
-          <h3>Rs. 5,000</h3>
-          <span>Recent donations</span>
-
-          <div class="avatars">
-            <img src="https://randomuser.me/api/portraits/men/45.jpg" />
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" />
-          </div>
-        </div>
+        <progress value="50" max="100"></progress>
       </div>
 
-      <div class="main-grid">
-        <section>
-          <h5>This Month</h5>
-
-          <div class="progress-row">
-            <div class="flex-between">
-              <strong>Food Build Schools</strong>
-              <span>$400 / $800</span>
-            </div>
-            <progress value="50" max="100"></progress>
-          </div>
-
-          <div class="progress-row">
-            <div class="flex-between">
-              <strong>Family Support</strong>
-              <span>$350 / $700</span>
-            </div>
-            <progress value="50" max="100"></progress>
-          </div>
-
-          <div class="progress-row">
-            <div class="flex-between">
-              <strong>Aid for All</strong>
-              <span>$500 / $1200</span>
-            </div>
-            <progress value="40" max="100"></progress>
-          </div>
-
-          <h5 style="margin-top: 1.5rem">Active Campaigns</h5>
-
-          <div class="progress-row">
-            <div class="flex-between">
-              <strong>Flood Relief</strong>
-              <span>$7000 / $10000</span>
-            </div>
-            <progress value="70" max="100"></progress>
-          </div>
-
-          <div class="progress-row">
-            <div class="flex-between">
-              <strong>Medical Fund</strong>
-              <span>$5000 / $9000</span>
-            </div>
-            <progress value="55" max="100"></progress>
-          </div>
-
-          <div class="progress-row">
-            <div class="flex-between">
-              <strong>Medical Aid</strong>
-              <span>$3000 / $7000</span>
-            </div>
-            <progress value="42" max="100"></progress>
-          </div>
-        </section>
-
-        <aside>
-          <article>
-            <small>Newest Campaign</small>
-            <h3>18,530</h3>
-            <p>Donations</p>
-            <div class="avatars">    
-                <img src="https://randomuser.me/api/portraits/men/12.jpg" />
-            </div>
-            </article>
-
-          <article>
-            <small>Emergency</small>
-            <h3>$1,340</h3>
-            <p>Emergency Fund</p>
-          </article>
-
-          <article>
-            <small>Total Raised</small>
-            <h3>44,553</h3>
-            <p>Emergency Relief</p>
-          </article>
-        </aside>
+      <div class="progress-row">
+        <div class="flex-between">
+          <strong>Family Support</strong>
+          <span>$350 / $700</span>
+        </div>
+        <progress value="50" max="100"></progress>
       </div>
-    </main>
-  </body>
-</html>
+
+      <div class="progress-row">
+        <div class="flex-between">
+          <strong>Aid for All</strong>
+          <span>$500 / $1200</span>
+        </div>
+        <progress value="40" max="100"></progress>
+      </div>
+
+      <h5 style="margin-top: 1.5rem">Active Campaigns</h5>
+
+      <div class="progress-row">
+        <div class="flex-between">
+          <strong>Flood Relief</strong>
+          <span>$7000 / $10000</span>
+        </div>
+        <progress value="70" max="100"></progress>
+      </div>
+
+      <div class="progress-row">
+        <div class="flex-between">
+          <strong>Medical Fund</strong>
+          <span>$5000 / $9000</span>
+        </div>
+        <progress value="55" max="100"></progress>
+      </div>
+
+      <div class="progress-row">
+        <div class="flex-between">
+          <strong>Medical Aid</strong>
+          <span>$3000 / $7000</span>
+        </div>
+        <progress value="42" max="100"></progress>
+      </div>
+    </section>
+
+    <aside>
+      <article>
+        <small>Newest Campaign</small>
+        <h3>18,530</h3>
+        <p>Donations</p>
+        <div class="avatars">    
+            <img src="https://randomuser.me/api/portraits/men/12.jpg" />
+        </div>
+        </article>
+
+      <article>
+        <small>Emergency</small>
+        <h3>$1,340</h3>
+        <p>Emergency Fund</p>
+      </article>
+
+      <article>
+        <small>Total Raised</small>
+        <h3>44,553</h3>
+        <p>Emergency Relief</p>
+      </article>
+    </aside>
+  </div>
+</section>
+{% endblock %}
