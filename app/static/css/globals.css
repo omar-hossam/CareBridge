@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
 }
 main {
 background-color: #F8FAFc;
@@ -24,4 +25,8 @@ background-color: #F8FAFc;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background-color: #F8FAFc;
+  
+
 }

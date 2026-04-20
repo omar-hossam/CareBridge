@@ -3,7 +3,6 @@
 {% block title %}BridgeCare - Homepage{% endblock %}
 
 {% block css %} 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
 {% endblock %}
 
 {% block content %}
@@ -12,46 +11,46 @@
 <section class="hero">
   <div class="grid-container">
     <!-- Left column --> 
-    <div class="content">
-        <div class="text">
-            <h1>Get Medical Help -<span class="header-text">Even Without Money</span></h1>
-            <h3>Verified hospitals treat patients first. Donors fund the cost later. No personal data shared ever</h3>
-        </div>
-    <div class="btn">
-        <button class="contrast">Request Help</button>
-        <button class="outline">Donate Now</button>
-
-    </div>
-
-    
-
-  <div class="process-row">
-    <span>REQUEST</span>
-    <span class="arrow">→</span>
-    <span>VERIFIED</span>
-    <span class="arrow">→</span>
-    <span>FUNDED</span>
-    <span class="arrow">→</span>
-    <span>TREATED</span>
-  </div>
-  </div>
+     <div class="left-section">
+        <div class="content">
+             <div class="text">
+                 <h1>Get Medical Help -<span class="header-text">Even Without Money</span></h1>
+                 <h3>Verified hospitals treat patients first. Donors fund the cost later. No personal data shared ever</h3>
+             </div>
+             <div class="btn">
+                 <button class="contrast">Request Help</button>
+                 <button class="outline">Donate Now</button>
+     
+             </div>
+     
+             <div class="process-row">
+                 <span>REQUEST</span>
+                 <span class="arrow">→</span>
+                 <span>VERIFIED</span>
+                 <span class="arrow">→</span>
+                 <span>FUNDED</span>
+                 <span class="arrow">→</span>
+                 <span>TREATED</span>
+         </div>
+       </div>
+     </div>
 
 
   <!-- Right column -->
-   <div class="image">
+  
 
-    <div class ="empty-container">
-        <div class="gradient-color"></div>
-        <div class="verification-box ">
+    <div class ="right-section">
+        <div class="gradient-color">
             
+            <div class="verification-box ">
+                
                 <small class="card-text">
                     <i class="ph-fill ph-first-aid"></i>
-                    <h3>General Hospital of Cityville
-                    </h3>
+                    <h3>➕General Hospital of Cityville</h3>
                 </small>
             
         </div>
-            <div class="hero-visual">
+        <div class="hero-visual">
             
             <div class="donation-card">
             <div class="card-top">
@@ -79,44 +78,47 @@
             </div>
             <button class="btn-fund">Fund This Treatment</button>
             </div>
-
+            
             <!-- Success Card -->
-            <div class="success-card">
-            <div class="success-header">
-                <div class="success-icon">✓</div>
-                <span>Donation Successful</span>
-            </div>
-            <p class="impact-label">IMPACT MADE</p>
-            <p class="impact-value">Life Saved</p>
-            <div class="donor-avatars">
-                <div class="avatar" style="background:#6366f1">AJ</div>
-                <div class="avatar" style="background:#f59e0b">MK</div>
-                <div class="avatar" style="background:#ec4899">RP</div>
-                <span class="donor-count">+12</span>
-            </div>
+                 <div class="success-card">
+                     <div class="success-header">
+                         <div class="success-icon">✓</div>
+                         <span>Donation Successful</span>
+                     </div>
+                     <p class="impact-label">IMPACT MADE</p>
+                     <p class="impact-value">Life Saved</p>
+                     <div class="donor-avatars">
+                         <div class="avatar" style="background:#6366f1">AJ</div>
+                         <div class="avatar" style="background:#f59e0b">MK</div>
+                         <div class="avatar" style="background:#ec4899">RP</div>
+                         <span class="donor-count">+12</span>
+                     </div>
+                 </div>
 
+           
 
-            </div>
+                        </div>
             
-       
-            
-       
-
-
-    </div>
+            </div>
     </div>
 
     
-</div>
 
+
+
+</section>
 <footer>
     <div class="footer-left">
         <p>&copy;2026 BridgeCare. Dedicated to medical equality. All rights reserved.</p>
         
     </div>
+    <div class="footer-links">
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+
+    </div>
 
     
 </footer>
-
-</section>
 {% endblock %}
