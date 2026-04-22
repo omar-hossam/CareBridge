@@ -7,6 +7,7 @@
     --bd-size: 0.15rem;
     --bd-color: #f2f2f2;
     --bd-rad: 0.25rem;
+    --hos-logo-size: 48px;
   }
   
   #cont {
@@ -25,6 +26,46 @@
   }
   @media only screen and (min-width: 1240px) {
     #cont { grid-template-columns: 38% 1fr }
+  }
+  .hospital-logo {
+    border-radius: 50%;
+    width: var(--hos-logo-size);
+    height: var(--hos-logo-size);
+    object-fit: cover;
+    object-position: center;
+    border: 0.15rem solid #ddd;
+  }
+  section#right article header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  section#right article header .inner-1 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .trust {
+    font-weight: bold;
+    background-color: var(--pico-background-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5px 7px;
+    border-radius: 0.25rem;
+    z-index: 4;
+    border: 0.05rem solid var(--pico-form-element-border-color);
+  }
+  .priority {
+    background-color: #E63946;
+    color: white;
+    padding: 5px 6px;
+    font-weight: bold;
+  }
+  .tags { display: flex; justify-content: space-between; align-items: center;}
+  .tags .donation-amount {
+    padding: 5px 6px;
+    background-color: #0f4c2a;
+    font-weight: bold;
+    color: white;
   }
 </style>
 
@@ -72,13 +113,32 @@
         </select>
       </div>
       
-      
-      
       <input type="submit" value="Filter" />
     </form>
   </aside>
-  <section>
-    
+  <section id="right">
+    <article>
+      <header>
+        <div class="inner-1">
+          <div class="hospital-logo"></div>
+          <span>North Hospital LTD.</span>
+        </div>
+        
+        <div role="link" class="trust">Trusted <img src="{{ url_for('static', filename='icons/shield-check.svg') }}" /></div>
+      </header>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris vol..</p>
+      
+      <div class="tags">
+        <span class="priority">VERY HIGH</span>
+        <span class="donation-amount">$0 of $50k needed</span>
+      </div>
+      
+      <footer class="grid">
+        <a role="button" href="/requests">Donate </a>
+        <a role="button" class="secondary" href="/requests/contact">Contact </a>
+      </footer>
+    </article>
   </section>
 </section>
 
