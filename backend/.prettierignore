@@ -1,0 +1,15 @@
+node_modules
+dist
+build
+coverage
+.env
+*.log
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+*.min.js
+*.bundle.js
