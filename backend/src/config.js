@@ -1,14 +1,11 @@
-import {configDotenv} from "dotenv"
-configDotenv({
-    path: "./.env"
-})
+import dotenv from "dotenv";
 
+dotenv.config();
 
 const env = {
-    db_uri : process.env.DB_URI,
-    db_name : process.env.DB_NAME,
-    port : process.env.PORT,
-}
+    port: process.env.PORT || 5000,
+    db_uri: process.env.DB_URI,
+    db_name: process.env.DB_NAME
+};
 
-export default env ; 
-
+export default env;
