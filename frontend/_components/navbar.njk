@@ -3,20 +3,22 @@
     <li><strong><a href="/" class="contrast">CareBridge <img src='/icons/hand-heart.svg' /></a></strong></li>
   </ul>
   
-  <ul>
-    <li><a href="/need-help">Need help <img src='/icons/first-aid.svg' /></a></li>
-    <li><a href="/requests">Donate <img src='/icons/donate.svg' /></a></li>
-    <li><a href="/login-hospital">Hospital Portal <img src='/icons/hospital.svg' alt="hospital icon" /></a></li>
-    <li><a href="/email-us">Email Us <img src='/icons/envelope.svg' /></a></li>
+  <ul class="hide-on-phone">
+    {% for link in navigation %}
+      <li><a href="{{ link.url }}">{{ link.name }} <img src="/icons/{{ link.iconName }}.svg" /></a></li>
+    {% endfor %}
   </ul>
   
   <ul>
-    <li>
-      <a role="button" href="/login" class="">Login <img src='/icons/user.svg' /></a>
+    <li class="hide-on-phone">
+      <a role="button" href="/login" id="nav-login-btn">Login <img src='/icons/user.svg' /></a>
     </li>
-    <li>
+    <li class="hide-on-phone">
       <a role="button" class="contrast" target="_blank" href="https://www.github.com/omar-hossam/CareBridge">
       <img src='/icons/github-logo.svg' /></a>
+    </li>
+    <li id="menu-btn-navbar">
+      <button onclick="addClass('#side-nav', 'active')" class="secondary outline"><img src="/icons/list.svg" /></button>
     </li>
   </ul>
   

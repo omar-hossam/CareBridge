@@ -1,0 +1,10 @@
+<aside id="side-nav">
+  <button onclick='remClass("#side-nav", "active")' id="side-nav-close">
+    <img src="/icons/x.svg">
+  </button>
+  <ul class="container">
+    {% for link in navigation %}
+      <li><a href="{{ link.url }}">{{ link.name }} <img src="/icons/{{ link.iconName }}.svg" /></a></li>
+    {% endfor %}
+  </ul>
+</aside>
