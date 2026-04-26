@@ -9,16 +9,29 @@
     {% endfor %}
   </ul>
   
-  <ul>
-    <li class="hide-on-phone">
-      <a role="button" href="/login" id="nav-login-btn">Login <img src='/icons/user.svg' /></a>
-    </li>
+<li class="hide-on-phone"
+    id="auth-section"
+    hx-get="http://localhost:5000/auth/navbar"
+    hx-trigger="load"
+    hx-swap="innerHTML"
+    hx-credentials="include">
+
+  <a role="button" href="/login" id="nav-login-btn">
+    Login <img src="/icons/user.svg" />
+  </a>
+
+</li>
+    
     <li class="hide-on-phone">
       <a role="button" class="contrast" target="_blank" href="https://www.github.com/omar-hossam/CareBridge">
-      <img src='/icons/github-logo.svg' /></a>
+        <img src='/icons/github-logo.svg' />
+      </a>
     </li>
+
     <li id="menu-btn-navbar">
-      <button onclick="addClass('#side-nav', 'active')" class="secondary outline"><img src="/icons/list.svg" /></button>
+      <button onclick="addClass('#side-nav', 'active')" class="secondary outline">
+        <img src="/icons/list.svg" />
+      </button>
     </li>
   </ul>
   

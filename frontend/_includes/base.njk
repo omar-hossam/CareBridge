@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <script src="/js/htmx.min.js" defer></script>
+        <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <link rel="stylesheet" href="/css/pico.blue.min.css">
     <link rel="stylesheet" href="/css/globals.css">
     {%- for file in css %}
@@ -26,5 +27,6 @@
     {%- for script in js %}
       {{ script | safe }}
     {%- endfor %}
+
 </body>
 </html>
