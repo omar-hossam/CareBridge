@@ -14,14 +14,6 @@ kljio4578
 
 ----
 
-*Hospital*
-
-demo-hospital@example.com
-
-klklkl987
-
-----
-
 *Admin*
 
 admin@carebridge.com
