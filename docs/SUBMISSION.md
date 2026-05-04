@@ -11,7 +11,7 @@
 | **Demo Video** | [https://youtu.be/fgl206Bu170](https://youtu.be/fgl206Bu170) |
 | **Live Demo** | [https://carebridge-hack.netlify.app](https://carebridge-hack.netlify.app) |
 | **GitHub Repo** | [https://github.com/omar-hossam/CareBridge](https://github.com/omar-hossam/CareBridge) |
-| **Screenshots** | [https://github.com/omar-hossam/CareBridge/screenshots/](https://github.com/omar-hossam/CareBridge/screenshots/)
+| **Screenshots** | [https://github.com/omar-hossam/CareBridge/tree/main/screenshots](https://github.com/omar-hossam/CareBridge/tree/main/screenshots)
 
 ---
 
